@@ -2,20 +2,25 @@
 
 ###Integration
 
-- Client side integration
-    Before the closing "head" tag paste javasript.
+####Client side
+
+- Before the closing "head" tag paste javasript.
 ```
     <script src='https://www.google.com/recaptcha/api.js'></script>
 ```
 
-- Client side paste in form PHP code
+- Paste PHP code into html form
 ```
     if (ReCaptcha::getInstance()->isEnabled()) {
 		    echo ReCaptcha::getInstance()->htmlFormCode();
     } 
 ```
 
-- Server side settings from https://www.google.com/recaptcha/
+####Server side
+
+- Include class ReCaptcha.class.php
+
+- Settings from https://www.google.com/recaptcha/
 ```
 define("RECAPTCHA_ENABLED", true);
 define("RECAPTCHA_SECRET_KEY", "3324dfsfmiurhf3yrh3fhjsdfkjndskc");
