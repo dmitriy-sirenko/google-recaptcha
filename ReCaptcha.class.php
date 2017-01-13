@@ -73,9 +73,10 @@ class ReCaptcha
      * show captcha in html form
      * @return string
      */
-    public function htmlFormCode()
+    public function htmlFormCode($callbackJSFunctionName = null)
     {
-        return  '<div class="g-recaptcha" data-sitekey="'.$this->siteKey.'"></div>';
+        $callback = !is_null($callbackJSFunctionName) ? ' data-callback="'.$callbackJSFunctionName.'"' : '';
+        return  '<div class="g-recaptcha" data-sitekey="'.$this->siteKey.'" '.$callback.'></div>';
     }
 
 }
