@@ -27,7 +27,7 @@ class ReCaptcha
         }
     }
 
-    static public function getInstance()
+    public static function getInstance()
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
@@ -51,7 +51,7 @@ class ReCaptcha
     public function checkCaptcha()
     {
         if (!isset($_REQUEST['g-recaptcha-response'])) {
-            return false;
+        	return false;
         }
 
         $gRecaptchaResponse = $_REQUEST['g-recaptcha-response'];
